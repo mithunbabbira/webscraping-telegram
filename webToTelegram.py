@@ -2,23 +2,14 @@ import telebot
 import time
 import requests
 import bs4
-
-
 res = requests.get('https://www.worldometers.info/coronavirus/country/india/')
 print(res)
 n=[]
 soup = bs4.BeautifulSoup(res.text, 'lxml')
 
-
-
-
-
 for i in soup.select('.maincounter-number'):
 	n.append(i.text)
 print(n[2])
-
-
-
 
 bot_token ='1228157522:AAECEHSq1ImwdM5-vvW5vyKqwJp3Ax60W4E'
 
